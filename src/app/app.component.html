@@ -1,0 +1,42 @@
+<div class="container">
+    <div class="row">     
+        <nav class="navbar">     
+            <ul class="nav nav-tabs">
+                <li class="nav-item" routerLinkActive="activated">
+                    <a 
+                        class="nav-link"
+                        [ngClass]="isActivated ? 'activated' : 'undefined'"
+                        routerLink="/navigator"
+                        [queryParams]="{ tab: 0 }"
+                        (click)="onTabLinkClick('income')">Income</a>
+                </li>
+            
+                <li class="nav-item" routerLinkActive="activated">
+                    <a 
+                        class="nav-link"
+                        routerLink="/navigator"
+                        [queryParams]="{ tab: 1 }"
+                        (click)="onTabLinkClick('outcome')">Outcome</a>
+                </li>
+        
+                <li class="nav-item" routerLinkActive="activated">
+                    <a 
+                        class="nav-link" 
+                        routerLink="/navigator" 
+                        [queryParams]="{ tab: 2 }"
+                        (click)="onTabLinkClick('loan')">Loans</a>
+                </li>
+
+                <li class="nav-item" routerLinkActive="activated">
+                    <a 
+                        class="nav-link" 
+                        routerLink="/navigator"
+                        [queryParams]="{ tab: 3 }"
+                        (click)="onTabLinkClick('investment')">Investments</a>
+                </li>    
+            </ul>
+        </nav> 
+    </div> 
+    <app-table [arr]="arr"></app-table>
+</div>
+    
